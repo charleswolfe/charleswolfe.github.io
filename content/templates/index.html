@@ -230,35 +230,36 @@ function handleCloseOnClick() {
     <div class="max-w-screen-xl mx-auto px-5">
 
       {% for article in articles %}
-        <!-- Post -->
-        <article class="post">
-          <header>
-            <div class="title">
-              <h2 class="text-1xl font-bold dark:text-black"><a href="{{ article.url}}">{{ article.title }}</a></h2>
-              <a class="italic">{{ article.oneliner }}</a>
+
+
+         <div class="py-12 border-t-2 border-gray-700">
+          <div class="flex flex-wrap lg:flex-nowrap items-center">
+            <div class="w-full lg:w-auto px-4 mb-8 lg:mb-0">
+              <img class="block w-44 h-30" src="{{ article.image }}" alt="{{ article.oneliner }}">
             </div>
-            <div class="meta">
-              <a href="#" class="author"><span class="name">{{ article.author }}</span>
-                <img width="40em" src="https://media.licdn.com/dms/image/C5603AQFQJUmt_1jI6A/profile-displayphoto-shrink_800_800/0/1516481339194?e=1722470400&v=beta&t=HM3fXxlmmnuPzcpxmyCd92Ja9eGHQUbvu8YhSgHLa-U" alt="" /></a>
+            <div class="w-full lg:w-9/12 px-4 mb-10 lg:mb-0">
+              <div class="max-w-2xl">
+                <span class="block text-gray-400 mb-1">{{ article.date | strftime('%Y-%m-%d') }}</span>
+                <a class="text-2xl font-semibold text-black" href="{{ article.url }}">{{ article.title }}</a>
+                <a class="italic text-xl  text-gray-500">{{ article.summary }}</a>
+              </div>
             </div>
-          </header>
+            <div class="w-full lg:w-auto px-4 ml-auto text-right">
+              <a class="inline-flex items-center text-xl font-semibold text-blue-900 hover:text-gray-300" href="{{ article.url }}">
+                <span class="mr-2">Read</span>
+                <svg class="animate-bounce" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.33301 14.6668L14.6663 1.3335" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M1.33301 1.3335H14.6663V14.6668" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
 
-          <a href="{{ article.url }}" class="image featured"><img src="{{ article.image }}" alt="" /></a>
-          {{ article.summary }}
 
-          <footer>
-            <ul class="actions">
-              <li><a href="{{ article.url }}" class="">Continue Reading</a></li>
-            </ul>
 
-            <ul class="stats">
-              {% for tag in article.tags %}
-              <li><a href="tag/{{ tag.name }}.html">{{ tag.name }}</a></li>
-              {% endfor %}
-            </ul>
-          </footer>
-        </article>
-        {% endfor %}
+
+      {% endfor %}
 
 
       <div class="bg-black p-8 md:px-20 md:py-20 mt-20 mx-auto max-w-5xl rounded-lg flex flex-col items-center text-center">
