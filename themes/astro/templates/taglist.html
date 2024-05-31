@@ -1,0 +1,1 @@
+{% if article.tags %}<p class="py-2 font-light">tags: {% for tag in article.tags %}<a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a> {% endfor %}</p>{% endif %}

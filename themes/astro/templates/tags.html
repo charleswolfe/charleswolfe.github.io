@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME|striptags }} - Tags{% endblock %}
+
+{% block content %}
+
+<section id="content" class="py-2">
+    <h1>Tags for {{ SITENAME }}</h1>
+    <ul>
+    {% for tag, articles in tags|sort %}
+        <li><a class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+    {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}
