@@ -16,12 +16,12 @@
             <div class="w-full lg:w-9/12 px-4 mb-10 lg:mb-0">
               <div class="max-w-2xl">
                 <span class="block text-gray-400 mb-1">{{ article.date | strftime('%Y-%m-%d') }}</span>
-                <a class="text-2xl font-semibold text-black" href="{{ article.url }}">{{ article.title }}</a>
+                <a class="text-2xl font-semibold text-black" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
                 <a class="italic text-xl  text-gray-500">{{ article.summary }}</a>
               </div>
             </div>
             <div class="w-full lg:w-auto px-4 ml-auto text-right">
-              <a class="inline-flex items-center text-xl font-semibold text-blue-900 hover:text-gray-300" href="{{ article.url }}">
+              <a class="inline-flex items-center text-xl font-semibold text-blue-900 hover:text-gray-300" href="{{ SITEURL }}/{{ article.url }}">
                 <span class="mr-2">Read</span>
                 <svg class="animate-bounce" width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1.33301 14.6668L14.6663 1.3335" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
