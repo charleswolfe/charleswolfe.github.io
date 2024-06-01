@@ -6,10 +6,14 @@ import sys
 
 sys.path.append(os.curdir)
 from pelicanconf import *
+THEME = 'themes/astro'
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
-SITEURL = "https://cwolfe.dev"
+SITEURL = "https://charleswolfe.github.io/blog/"
 RELATIVE_URLS = False
+
+PATH = "content"
+OUTPUT_PATH = 'blog/'
 
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
